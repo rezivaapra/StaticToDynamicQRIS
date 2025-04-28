@@ -1,0 +1,1 @@
+A website for generating dynamic QRIS from static QRIS.

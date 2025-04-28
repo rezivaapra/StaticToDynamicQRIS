@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Rezz Store QRIS</title>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles.css" />
+</style>
+</head>
+<body>
+<h1>Rezz Store QRIS</h1>
+<div class="container">
+<form id="converterForm">
+  <label for="nominal">Nominal Amount:</label>
+  <input type="number" id="nominal" name="nominal" min="0" required />
+
+  <!-- <label for="keterangan">Keterangan (description):</label>
+  <input type="text" id="keterangan" name="keterangan" placeholder="Enter description" /> -->
+
+  <label>
+    <input type="checkbox" id="includeFee" name="includeFee" />
+    Include Fee
+  </label>
+
+  <label for="feeType">Fee Type:</label>
+  <select id="feeType" name="feeType" disabled>
+    <option value="r">Rupiah (fixed)</option>
+    <option value="p">Percentage (%)</option>
+  </select>
+
+  <label for="feeValue">Fee Value:</label>
+  <input type="number" id="feeValue" name="feeValue" min="0" step="any" disabled />
+
+  <button type="submit">Generate QRIS</button>
+</form>
+
+  <canvas id="qrCanvas" width="300" height="300"></canvas>
+  <div id="qrInfo" class="qr-info"></div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/qrcode/build/qrcode.min.js"></script>
+<script src="scripts.js"></script>
+</body>
+</html>
